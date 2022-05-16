@@ -10,7 +10,7 @@
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-
+  z-index: 300;
   &_name {
     font-weight: 700;
   }

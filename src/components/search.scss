@@ -1,0 +1,39 @@
+@import "../index.scss";
+
+.search {
+  padding-top: 2rem;
+  background: url("pattern-bg.png");
+  background-size: cover;
+  height: 30vh;
+  display: flex;
+  color: $white;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  &_name {
+    font-weight: 700;
+  }
+  &_bar {
+    display: flex;
+
+    &-input {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      border-radius: 8px 0 0 8px;
+      font-size: 3rem;
+      padding: 1rem;
+    }
+    &-icon {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border-radius: 0 8px 8px 0;
+      background-color: $dark_gray;
+      width: 5rem;
+    }
+  }
+}

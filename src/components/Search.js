@@ -10,6 +10,7 @@ const Search = () => {
       <div className="search_name">IP Adress Tracker</div>
       <div className="search_bar">
         <input
+          placeholder="Insert your IP address"
           className="search_bar-input"
           type="text"
           value={value}

@@ -5,18 +5,20 @@ const URL =
 const AddressContext = ({ children }) => {
   const [value, setValue] = useState("");
   const [currentIp, setCurrentIp] = useState({ lat: 0, lng: 0 });
+  const [error, setError] = useState("");
   const inputObserver = (e) => {
-    setValue(e.target.value);
+    e.key === "Enter" && getData();
+    e.target.value !== "undefined" && setValue(e.target.value);
   };
-
+  console.dir(error.message);
   const getData = async () => {
     try {
       const response = await fetch(URL + value);
       if (!response.ok)
-        throw new Error(`Error on getting data ! (${response.status})`);
+        throw new Error(`No IP address found! Error(${response.status}) `);
 
       const data = await response.json();
-
+      setError("");
       setCurrentIp({
         country: data.location.country,
         city: data.location.city,
@@ -27,13 +29,15 @@ const AddressContext = ({ children }) => {
         isp: data.isp,
       });
     } catch (err) {
+      console.log(err);
+      setError(err);
       console.error(err);
     }
   };
 
   return (
     <ContextProvider.Provider
-      value={{ value, inputObserver, getData, currentIp }}
+      value={{ value, inputObserver, getData, currentIp, error }}
     >
       {children}
     </ContextProvider.Provider>

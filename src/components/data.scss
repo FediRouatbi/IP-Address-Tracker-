@@ -22,14 +22,20 @@
   }
   &_name {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: clamp(0.5vw, 1.5rem, 2vw);
     color: hsl(0, 0%, 59%);
     text-transform: uppercase;
   }
   &_text {
+    font-size: clamp(2vw, 3rem, 3vw);
     font-weight: 500;
     padding-top: 1rem;
   }
+}
+
+.data:not(:hover) {
+  opacity: 1;
+  background-color: transparent;
 }
 @keyframes fadein {
   0% {
@@ -37,5 +43,18 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    top: 50%;
+    width: 50%;
+    div {
+      padding: 0;
+      border: none;
+    }
   }
 }

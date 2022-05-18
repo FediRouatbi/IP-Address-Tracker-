@@ -6,14 +6,13 @@ import { useRef } from "react";
 import "./map.scss";
 import Render from "./Render";
 const Map = () => {
+  const { currentIp } = useContext(ContextProvider);
+  const position = [currentIp.lat, currentIp.lng];
   const markerRef = useRef(null);
   const marker = markerRef.current;
   if (marker) {
     marker.openPopup();
   }
-
-  const { currentIp } = useContext(ContextProvider);
-  const position = [currentIp.lat, currentIp.lng];
 
   return (
     <main id="map">
@@ -26,8 +25,7 @@ const Map = () => {
           <Marker ref={markerRef} position={position}>
             (
             <Popup>
-              <div>Hello</div> you are currently at {currentIp.country},
-              {currentIp.city}
+              you are currently at {currentIp.country},{currentIp.city}
             </Popup>
             )
           </Marker>

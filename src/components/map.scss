@@ -3,7 +3,6 @@
   width: 100vw;
 }
 
-
 .leaflet-container {
   width: 100vw;
   height: 70vh;
@@ -11,4 +10,12 @@
 .custom-popup,
 .leaflet-popup-content-wrapper {
   font-size: 20px;
+}
+@media (max-width: 600px) {
+  .leaflet-popup-content-wrapper {
+    font-size: 10px;
+  }
+  .custom-popup .leaflet-popup-tip-container {
+    width: 20%;
+  }
 }

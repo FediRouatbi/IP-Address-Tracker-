@@ -22,7 +22,7 @@
       border: none;
       outline: none;
       border-radius: 8px 0 0 8px;
-      font-size: 3rem;
+      font-size: clamp(1vw, 3vw, 3rem);
       padding: 1rem;
     }
     &-icon {

@@ -1,6 +1,16 @@
 @import "../index.scss";
 
 .search {
+    &::after {
+    content: "in order to make the app work correctly turn off ad blocker ";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: red;
+    font-size: clamp(1rem, 1vw, 3rem);
+    animation: ads 5s infinite;
+    font-weight: 600;
+  }
   padding-top: 2rem;
   background: url("pattern-bg.png");
   background-size: cover;
@@ -37,3 +47,13 @@
     }
   }
 }
+@keyframes ads {
+  0% {
+    color: red;
+  }
+
+  100% {
+    color: white;
+  }
+}
+

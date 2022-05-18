@@ -7,10 +7,10 @@ const Search = () => {
 
   return (
     <header className="search">
-      <div className="search_name">IP Adress Tracker</div>
+      <div className="search_name">IP Address Tracker</div>
       <div className="search_bar">
         <input
-          placeholder="Insert your IP address"
+          placeholder="Insert your IP Address"
           className="search_bar-input"
           type="text"
           value={value}
